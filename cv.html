@@ -75,12 +75,15 @@
   /* print */
   @media print{
     @page{size:A4;margin:0}
-    body{background:#fff;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    html,body{background:#fff;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .toolbar{display:none}
-    .page{box-shadow:none;border-radius:0;max-width:none;width:100%;min-height:100vh}
-    .item,.xblock,.side{break-inside:avoid}
+    /* keep two columns + paint sidebar colour across every page via a full-height gradient */
+    .page{max-width:none;width:100%;border-radius:0;box-shadow:none;grid-template-columns:300px 1fr;
+      background:linear-gradient(to right,var(--sidebar) 0,var(--sidebar) 300px,#fff 300px,#fff 100%)}
+    .side{background:transparent}
+    .item,.xblock{break-inside:avoid}
   }
-  @media(max-width:760px){
+  @media screen and (max-width:760px){
     .page{grid-template-columns:1fr}
     .main{padding:32px 24px}
   }
