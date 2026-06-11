@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dinesh Kumar Dhawan — CV</title>
+<meta name="description" content="Curriculum Vitae — Dinesh Kumar Dhawan, UI/UX Designer." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ff4a1c'/><text x='50' y='70' font-size='56' font-family='Arial' font-weight='700' fill='%23fff' text-anchor='middle'>DD</text></svg>" />
+<style>
+  :root{
+    --accent:#ff4a1c;
+    --ink:#1a1916;
+    --muted:#6c6a63;
+    --faint:#9d9b93;
+    --line:rgba(26,25,22,.14);
+    --bg:#e9e8e4;
+    --sidebar:#161512;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',Helvetica,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;padding:34px 16px}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+
+  /* toolbar */
+  .toolbar{max-width:880px;margin:0 auto 18px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .toolbar a,.toolbar button{font:600 14px 'Inter',sans-serif;cursor:pointer;border:1px solid var(--ink);background:none;color:var(--ink);padding:10px 18px;border-radius:100px;transition:.25s}
+  .toolbar .dl{background:var(--accent);border-color:var(--accent);color:#fff}
+  .toolbar a:hover,.toolbar button:hover{transform:translateY(-2px)}
+
+  /* page */
+  .page{max-width:880px;margin:0 auto;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 30px 70px -40px rgba(20,20,15,.5);display:grid;grid-template-columns:300px 1fr}
+
+  /* sidebar */
+  .side{background:var(--sidebar);color:#e9e8e4;padding:38px 30px}
+  .photo{width:150px;height:185px;object-fit:cover;border-radius:6px;filter:grayscale(1);margin-bottom:26px;background:#000}
+  .side h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:26px 0 12px}
+  .side h3:first-of-type{margin-top:0}
+  .side .row{font-size:13.5px;margin-bottom:10px;line-height:1.45;word-break:break-word}
+  .side .row .k{color:#8d8b83;font-size:11px;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:1px}
+  .side .row a:hover{color:var(--accent)}
+  .side .cert{font-size:13.5px;margin-bottom:11px}
+  .side .cert .when{display:block;color:var(--accent);font-size:11.5px;margin-top:2px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .side .tool-sub{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#8d8b83;margin:14px 0 8px}
+  .side h3+.tool-sub{margin-top:0}
+  .chip{font-size:12px;border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:5px 11px;color:#d9d8d1}
+
+  /* main */
+  .main{padding:42px 40px}
+  .name{font-size:2.5rem;font-weight:600;letter-spacing:-.04em;line-height:1}
+  .role{font-size:1rem;color:var(--accent);font-weight:600;letter-spacing:.02em;margin-top:8px}
+  .name-rule{height:2px;background:var(--ink);margin:22px 0 26px}
+  section{margin-bottom:26px}
+  .sec-title{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .sec-title::before{content:"";width:18px;height:2px;background:var(--accent)}
+  .summary{font-size:14.5px;color:#3a392f}
+
+  .xblock{margin-bottom:14px}
+  .xblock:last-child{margin-bottom:0}
+  .xblock h4{font-size:13.5px;font-weight:700;color:var(--accent);letter-spacing:.02em;margin-bottom:4px}
+  .xblock p{font-size:13.5px;color:#46453b}
+
+  .item{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+  .item:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+  .item .top{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .item h4{font-size:1.02rem;font-weight:600;letter-spacing:-.02em}
+  .item h4 .lite{color:var(--muted);font-weight:500}
+  .item .org{color:var(--accent);font-weight:600;font-size:13.5px;margin-top:2px}
+  .item .when{font-size:12.5px;color:var(--muted);white-space:nowrap}
+  .item p{font-size:13.5px;color:#46453b;margin-top:7px}
+
+  /* print */
+  @media print{
+    @page{size:A4;margin:0}
+    body{background:#fff;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .toolbar{display:none}
+    .page{box-shadow:none;border-radius:0;max-width:none;width:100%;min-height:100vh}
+    .item,.xblock,.side{break-inside:avoid}
+  }
+  @media(max-width:760px){
+    .page{grid-template-columns:1fr}
+    .main{padding:32px 24px}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="index.html">← Back to portfolio</a>
+  <button class="dl" onclick="window.print()">⤓ Download PDF</button>
+</div>
+
+<div class="page">
+  <!-- SIDEBAR -->
+  <aside class="side">
+    <img class="photo" src="images/portrait.jpg" alt="Dinesh Kumar Dhawan" onerror="this.style.display='none'" />
+
+    <h3>Contact</h3>
+    <div class="row"><span class="k">Mobile</span><a href="tel:+917727838602">7727838602</a></div>
+    <div class="row"><span class="k">Email</span><a href="mailto:dhawandinesh3@gmail.com">dhawandinesh3@gmail.com</a></div>
+    <div class="row"><span class="k">Address</span>Sector 50, Gurugram, Haryana</div>
+
+    <h3>Links</h3>
+    <div class="row"><span class="k">Portfolio</span><a href="index.html">View live portfolio</a></div>
+    <div class="row"><span class="k">Behance</span><a href="https://www.behance.net/dineshdhawan" target="_blank" rel="noopener">behance.net/dineshdhawan</a></div>
+
+    <h3>Courses &amp; Certifications</h3>
+    <div class="cert">UI/UX Designer — DICE Academy, New Delhi<span class="when">October 2024 – May 2025</span></div>
+
+    <h3>Tools</h3>
+    <div class="tool-sub">Primary</div>
+    <div class="chips">
+      <span class="chip">Figma</span><span class="chip">Framer</span><span class="chip">Miro</span>
+      <span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">Canva</span>
+      <span class="chip">Claude + VS Code</span>
+    </div>
+    <div class="tool-sub">Others</div>
+    <div class="chips">
+      <span class="chip">Microsoft Excel</span><span class="chip">MySQL</span>
+      <span class="chip">Tableau</span><span class="chip">Power BI</span>
+    </div>
+
+    <h3>Hobbies</h3>
+    <div class="row">Digital Art &middot; Photography &middot; Oil Painting</div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="name">Dinesh Kumar Dhawan</div>
+    <div class="role">UI/UX Designer</div>
+    <div class="name-rule"></div>
+
+    <section>
+      <div class="sec-title">About Me</div>
+      <p class="summary">A passionate UI/UX designer with a keen eye for aesthetics and functionality. Proficient in wireframing, prototyping, and usability testing. Adept at creating engaging digital experiences with a user-centered approach. Eager to contribute innovative design solutions to a forward-thinking team.</p>
+    </section>
+
+    <section>
+      <div class="sec-title">Skills &amp; Expertise</div>
+      <div class="xblock">
+        <h4>UI/UX Designer</h4>
+        <p>Visual Design Principles, Design Systems &amp; Components, Responsive &amp; Adaptive Design, Prototyping Tools &amp; Techniques, Microinteractions &amp; Animation, Information Architecture (IA), Wireframing &amp; Prototyping, Interaction Design, Usability &amp; Accessibility.</p>
+      </div>
+      <div class="xblock">
+        <h4>Graphic Designer</h4>
+        <p>Creating visual content using typography, color, and layout — tools like Photoshop and Illustrator for branding, marketing, and digital design.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-title">Projects</div>
+      <div class="item">
+        <h4>Sculptura <span class="lite">— Web Project on Stone Sculptures</span></h4>
+        <p>Designed a minimalist e-commerce platform for stone sculptures. Implemented a smooth browsing and checkout experience.</p>
+      </div>
+      <div class="item">
+        <h4>HomyGo <span class="lite">— Real Estate Booking App</span></h4>
+        <p>Designed a seamless booking experience for Italian properties. Focused on interactive UI and an engaging gallery section.</p>
+      </div>
+      <div class="item">
+        <h4>LuxeCarry <span class="lite">— Handcrafted Handbags</span></h4>
+        <p>Developed a premium e-commerce experience with an elegant UI.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-title">Work Experience</div>
+      <div class="item">
+        <div class="top">
+          <div>
+            <h4>UI/UX Designer</h4>
+            <div class="org">Designs &amp; Words, Jaipur</div>
+          </div>
+          <div class="when">September 2025 – Present</div>
+        </div>
+        <p>Designed user-centered interfaces for web and mobile — building wireframes, interactive prototypes and responsive, accessible UI, and collaborating with the team to ship polished digital experiences.</p>
+      </div>
+      <div class="item">
+        <div class="top">
+          <div>
+            <h4>MIS Executive</h4>
+            <div class="org">Jarvis Technology And Strategy Consulting Pvt. Ltd.</div>
+          </div>
+          <div class="when">March 2023 – July 2023</div>
+        </div>
+        <p>Created dynamic Excel reports and dashboards using advanced functions like PivotTables and VLOOKUP, providing actionable insights that supported data-driven decision-making and contributed to business growth.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-title">Education</div>
+      <div class="item">
+        <div class="top">
+          <div>
+            <h4>Ph.D., Stem Cell &amp; Cancer Biology <span class="lite">(Discontinued)</span></h4>
+            <div class="org">Indian Institute of Technology (IIT), Guwahati, Assam</div>
+          </div>
+          <div class="when">July 2020 – July 2022</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="top">
+          <div>
+            <h4>M.Sc. Life Sciences <span class="lite">(Sp. in Microbiology)</span></h4>
+            <div class="org">Central University of Punjab, Bathinda</div>
+          </div>
+          <div class="when">July 2019</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>
