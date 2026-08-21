@@ -34,8 +34,8 @@
   .page{max-width:880px;margin:0 auto;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 30px 70px -40px rgba(20,20,15,.5);display:grid;grid-template-columns:250px 1fr}
 
   /* sidebar */
-  .side{background:var(--sidebar);color:#e9e8e4;padding:32px 26px}
-  .photo{width:140px;height:168px;object-fit:cover;border-radius:6px;filter:grayscale(1);margin-bottom:20px;background:#000}
+  .side{background:var(--sidebar);color:#e9e8e4;padding:30px 24px}
+  .photo{width:132px;height:158px;object-fit:cover;border-radius:6px;filter:grayscale(1);margin-bottom:20px;background:#000}
   .side h3{font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:18px 0 9px}
   .side h3:first-of-type{margin-top:0}
   .side .row{font-size:10.5px;margin-bottom:7px;line-height:1.45;word-break:break-word}
@@ -43,6 +43,10 @@
   .side .row a{color:#fff;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;text-decoration-color:rgba(255,255,255,.45)}
   .side .row a:hover{color:var(--accent);text-decoration-color:var(--accent)}
   .side .cert{font-size:10.5px;margin-bottom:8px}
+  .side .edu{font-size:10.5px;line-height:1.4;margin-bottom:9px;font-weight:600}
+  .side .edu .dis{color:#8d8b83;font-weight:500}
+  .side .edu .inst{display:block;color:#a8a69e;font-weight:400;margin-top:1px}
+  .side .edu .yr{display:block;color:var(--accent);font-size:10px;font-weight:600;margin-top:1px}
   .side .cert .when{display:block;color:var(--accent);font-size:11.5px;margin-top:2px}
   .chips{display:flex;flex-wrap:wrap;gap:7px}
   .side .tool-sub{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#8d8b83;margin:14px 0 8px}
@@ -50,21 +54,24 @@
   .chip{font-size:9.5px;border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:3px 8px;color:#d9d8d1}
 
   /* main */
-  .main{padding:34px 34px}
+  .main{padding:26px 30px}
   .name{font-size:1.68rem;font-weight:600;letter-spacing:-.04em;line-height:1}
   .role{font-size:.78rem;color:var(--accent);font-weight:600;letter-spacing:.02em;margin-top:5px}
-  .name-rule{height:2px;background:var(--ink);margin:18px 0 22px}
-  section{margin-bottom:15px}
-  .sec-title{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);font-weight:700;margin-bottom:9px;display:flex;align-items:center;gap:9px}
+  .name-rule{height:2px;background:var(--ink);margin:14px 0 18px}
+  section{margin-bottom:10px}
+  .sec-title{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);font-weight:700;margin-bottom:7px;display:flex;align-items:center;gap:9px}
   .sec-title::before{content:"";width:18px;height:2px;background:var(--accent)}
   .summary{font-size:10.5px;color:#3a392f}
 
-  .xblock{margin-bottom:9px}
+  .xblock{margin-bottom:7px}
   .xblock:last-child{margin-bottom:0}
   .xblock h4{font-size:10.5px;font-weight:700;color:var(--accent);letter-spacing:.02em;margin-bottom:3px}
   .xblock p{font-size:10.5px;color:#46453b}
+  .xblock p a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:.5px;text-decoration-color:var(--line)}
+  .xblock p a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+  .xblock h4 .lite{color:var(--muted);font-weight:500}
 
-  .item{margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .item{margin-bottom:7px;padding-bottom:7px;border-bottom:1px solid var(--line)}
   .item:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
   .item .top{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   .item h4{font-size:.8rem;font-weight:600;letter-spacing:-.02em}
@@ -83,138 +90,162 @@
       background:linear-gradient(to right,var(--sidebar) 0,var(--sidebar) 250px,#fff 250px,#fff 100%)}
     .side{background:transparent}
     .item,.xblock{break-inside:avoid}
+    .page{page-break-after:avoid}
   }
   @media screen and (max-width:760px){
     .page{grid-template-columns:1fr}
     .main{padding:32px 24px}
   }
+
+  /* core skills */
+  .skl{display:grid;grid-template-columns:200px 1fr;gap:12px;font-size:10.5px;color:#46453b;margin-bottom:4px}
+  .skl b{color:var(--accent);font-weight:700}
+  /* bullets */
+  .item ul,.xblock ul{margin:4px 0 0;padding-left:13px}
+  .item li,.xblock li{font-size:10.5px;color:#46453b;margin-bottom:1px}
+  .item li::marker{color:var(--accent)}
+  .item .sublabel{font-size:10.5px;color:var(--muted);font-weight:500;margin-top:1px}
+  .item p a,.item li a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:.5px;text-decoration-color:var(--line)}
+  .item h4 a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:.5px;text-decoration-color:var(--line)}
+  .item h4 a:hover{color:var(--accent)}
 </style>
 </head>
 <body>
 
 <div class="toolbar">
-  <a href="index.html">← Back to portfolio</a>
-  <button class="dl" onclick="window.print()">⤓ Download PDF</button>
+  <a href="index.html">&larr; Back to portfolio</a>
+  <button class="dl" onclick="window.print()">&#10515; Download PDF</button>
 </div>
 
 <div class="page">
   <!-- SIDEBAR -->
   <aside class="side">
-    <img class="photo" src="images/portrait.jpg" alt="Dinesh Kumar Dhawan" onerror="this.style.display='none'" />
+    <img class="photo" src="images/portrait.jpg" alt="Dinesh Dhawan" onerror="this.style.display='none'" />
 
     <h3>Contact</h3>
-    <div class="row"><span class="k">Mobile</span><a href="tel:+917727838602">7727838602</a></div>
     <div class="row"><span class="k">Email</span><a href="mailto:dhawandinesh3@gmail.com">dhawandinesh3@gmail.com</a></div>
-    <div class="row"><span class="k">Address</span>Sector 50, Gurugram, Haryana</div>
+    <div class="row"><span class="k">Phone</span><a href="tel:+917727838602">+91 77278 38602</a></div>
+    <div class="row"><span class="k">Location</span>Jaipur, Rajasthan, India</div>
 
     <h3>Links</h3>
     <div class="row"><span class="k">Portfolio</span><a href="https://designswords-virat.github.io/dinesh-dhawan-portfolio/" target="_blank" rel="noopener">View live portfolio</a></div>
     <div class="row"><span class="k">Behance</span><a href="https://www.behance.net/dineshdhawan" target="_blank" rel="noopener">behance.net/dineshdhawan</a></div>
 
-    <h3>Courses &amp; Certifications</h3>
-    <div class="cert">UI/UX Designer — DICE Academy, New Delhi<span class="when">October 2024 – May 2025</span></div>
-
     <h3>Tools</h3>
-    <div class="tool-sub">Primary</div>
     <div class="chips">
-      <span class="chip">Figma</span><span class="chip">Framer</span><span class="chip">Miro</span>
-      <span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">Canva</span>
-      <span class="chip">Claude + VS Code</span>
-    </div>
-    <div class="tool-sub">Others</div>
-    <div class="chips">
-      <span class="chip">Microsoft Excel</span><span class="chip">MySQL</span>
-      <span class="chip">Tableau</span><span class="chip">Power BI</span>
+      <span class="chip">Figma</span><span class="chip">Framer</span><span class="chip">VS Code + Claude</span>
+      <span class="chip">Shopify</span><span class="chip">Photoshop</span><span class="chip">Illustrator</span>
     </div>
 
-    <h3>Hobbies</h3>
-    <div class="row">Digital Art &middot; Photography &middot; Oil Painting</div>
+    <h3>Education</h3>
+    <div class="edu">Ph.D., Stem Cell &amp; Cancer Biology <span class="dis">(Discontinued)</span>
+      <span class="inst">Indian Institute of Technology (IIT), Guwahati</span>
+      <span class="yr">July 2020 &ndash; July 2022</span>
+    </div>
+    <div class="edu">M.Sc. Life Sciences <span class="dis">(Sp. in Microbiology)</span>
+      <span class="inst">Central University of Punjab, Bathinda</span>
+      <span class="yr">July 2019</span>
+    </div>
+    <div class="edu">B.Sc. Life Sciences
+      <span class="inst">Govt. PG College, Dausa</span>
+      <span class="yr">2015</span>
+    </div>
+
+    <h3>Certification</h3>
+    <div class="cert">UI/UX Design &mdash; DICE Academy, Delhi<span class="when">October 2024 &ndash; May 2025</span></div>
   </aside>
 
   <!-- MAIN -->
   <main class="main">
-    <div class="name">Dinesh Kumar Dhawan</div>
-    <div class="role">UI/UX Designer</div>
+    <div class="name">Dinesh Dhawan</div>
+    <div class="role">UI / Web Designer</div>
     <div class="name-rule"></div>
 
     <section>
-      <div class="sec-title">About Me</div>
-      <p class="summary">A passionate UI/UX designer with a keen eye for aesthetics and functionality. Proficient in wireframing, prototyping, and usability testing. Adept at creating engaging digital experiences with a user-centered approach. Eager to contribute innovative design solutions to a forward-thinking team.</p>
+      <div class="sec-title">Profile</div>
+      <p class="summary">UI / Web Designer focused on creating <strong>clear, modern and visually refined digital experiences</strong>. Experienced in UI design, web design and AI-assisted development, with a strong focus on visual hierarchy, typography, responsive layouts and interaction.</p>
     </section>
 
     <section>
-      <div class="sec-title">Skills &amp; Expertise</div>
+      <div class="sec-title">Core Domains</div>
       <div class="xblock">
-        <h4>UI/UX Designer</h4>
-        <p>Visual Design Principles, Design Systems &amp; Components, Responsive &amp; Adaptive Design, Prototyping Tools &amp; Techniques, Microinteractions &amp; Animation, Information Architecture (IA), Wireframing &amp; Prototyping, Interaction Design, Usability &amp; Accessibility.</p>
+        <h4>UI Design</h4>
+        <p>Interfaces with clear hierarchy, thoughtful layouts and consistent visual systems.</p>
       </div>
       <div class="xblock">
-        <h4>Graphic Designer</h4>
-        <p>Creating visual content using typography, color, and layout — tools like Photoshop and Illustrator for branding, marketing, and digital design.</p>
+        <h4>Web Design</h4>
+        <p>Modern, responsive websites and landing pages with strong visual direction.</p>
+      </div>
+      <div class="xblock">
+        <h4>AI-Assisted Development</h4>
+        <p>Turning designs into functional, polished web experiences using VS Code + Claude.</p>
       </div>
     </section>
 
     <section>
-      <div class="sec-title">Projects</div>
-      <div class="item">
-        <h4>Sculptura <span class="lite">— Web Project on Stone Sculptures</span></h4>
-        <p>Designed a minimalist e-commerce platform for stone sculptures. Implemented a smooth browsing and checkout experience.</p>
-      </div>
-      <div class="item">
-        <h4>HomyGo <span class="lite">— Real Estate Booking App</span></h4>
-        <p>Designed a seamless booking experience for Italian properties. Focused on interactive UI and an engaging gallery section.</p>
-      </div>
-      <div class="item">
-        <h4>LuxeCarry <span class="lite">— Handcrafted Handbags</span></h4>
-        <p>Developed a premium e-commerce experience with an elegant UI.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-title">Work Experience</div>
+      <div class="sec-title">Experience</div>
       <div class="item">
         <div class="top">
           <div>
-            <h4>UI/UX Designer</h4>
-            <div class="org">Designs &amp; Words, Jaipur</div>
+            <h4>UI / Web Designer</h4>
+            <div class="org">Designs &amp; Words</div>
           </div>
-          <div class="when">September 2025 – Present</div>
+          <div class="when">September 2025 &ndash; Present</div>
         </div>
-        <p>Designed user-centered interfaces for web and mobile — building wireframes, interactive prototypes and responsive, accessible UI, and collaborating with the team to ship polished digital experiences.</p>
+        <ul>
+          <li>Design UI, websites and landing pages for digital projects.</li>
+          <li>Create responsive interfaces and visual systems using Figma and Framer.</li>
+          <li>Build and refine web experiences through AI-assisted workflows.</li>
+          <li>Work on typography, layout, visual hierarchy and interaction.</li>
+          <li>Create brand and marketing assets when required.</li>
+          <li>Work on Shopify-based e-commerce projects.</li>
+        </ul>
       </div>
       <div class="item">
         <div class="top">
           <div>
             <h4>MIS Executive</h4>
-            <div class="org">Jarvis Technology And Strategy Consulting Pvt. Ltd.</div>
+            <div class="org">Jarvis Technology &amp; Strategy Consulting Pvt. Ltd.</div>
           </div>
-          <div class="when">March 2023 – July 2023</div>
+          <div class="when">March 2023 &ndash; July 2023</div>
         </div>
-        <p>Created dynamic Excel reports and dashboards using advanced functions like PivotTables and VLOOKUP, providing actionable insights that supported data-driven decision-making and contributed to business growth.</p>
+        <ul>
+          <li>Managed and organized business data and reports.</li>
+          <li>Prepared operational reports and maintained structured information.</li>
+          <li>Supported day-to-day reporting and data workflows.</li>
+        </ul>
       </div>
     </section>
 
     <section>
-      <div class="sec-title">Education</div>
+      <div class="sec-title">Selected Projects</div>
       <div class="item">
-        <div class="top">
-          <div>
-            <h4>Ph.D., Stem Cell &amp; Cancer Biology <span class="lite">(Discontinued)</span></h4>
-            <div class="org">Indian Institute of Technology (IIT), Guwahati, Assam</div>
-          </div>
-          <div class="when">July 2020 – July 2022</div>
-        </div>
+        <h4><a href="https://slmindia.in/" target="_blank" rel="noopener">SLM</a></h4>
+        <div class="sublabel">Website Design</div>
+        <p>Designed a modern digital experience with a focus on clean UI, visual hierarchy and responsive web design.</p>
       </div>
       <div class="item">
-        <div class="top">
-          <div>
-            <h4>M.Sc. Life Sciences <span class="lite">(Sp. in Microbiology)</span></h4>
-            <div class="org">Central University of Punjab, Bathinda</div>
-          </div>
-          <div class="when">July 2019</div>
-        </div>
+        <h4><a href="https://reverencerealty.in/" target="_blank" rel="noopener">Reverence Value Homes</a></h4>
+        <div class="sublabel">Real Estate Website</div>
+        <p>Designed a premium real-estate website focused on property presentation, visual storytelling and lead generation.</p>
+      </div>
+      <div class="item">
+        <h4><a href="https://manglamwoodstory.com/" target="_blank" rel="noopener">Manglam Woodstory</a></h4>
+        <div class="sublabel">Furniture Brand Website</div>
+        <p>&ldquo;A Better Way With Wood&rdquo; &mdash; high-end furniture solutions for large-scale interior projects. Designed a modern brand website with premium product presentation, clean layouts and strong visual storytelling.</p>
+      </div>
+      <div class="item">
+        <h4><a href="https://mitishajaipur.com/" target="_blank" rel="noopener">Mitisha Jaipur</a></h4>
+        <div class="sublabel">E-commerce Website</div>
+        <p>Worked on the visual design and Shopify experience for a home-furnishing brand, including products, collections and store presentation.</p>
+      </div>
+      <div class="item">
+        <h4><a href="https://nivasa-landing.vercel.app/" target="_blank" rel="noopener">Niwasa</a></h4>
+        <div class="sublabel">Real Estate Landing Page</div>
+        <p>Designed a conversion-focused landing page for a real-estate investment project with emphasis on premium presentation and lead generation.</p>
       </div>
     </section>
+
   </main>
 </div>
 

@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dinesh Dhawan — UI & Graphic Designer</title>
-<meta name="description" content="Dinesh Dhawan — UI & Graphic Designer crafting clean interfaces and impactful brand identities. Figma · Framer · Code." />
+<title>Dinesh Dhawan — UI / Web Designer</title>
+<meta name="description" content="Dinesh Dhawan — UI / Web Designer. Thoughtful interfaces and modern web experiences, combining strong visual direction with AI-assisted development." />
 <meta name="author" content="Dinesh Dhawan" />
-<meta property="og:title" content="Dinesh Dhawan — UI & Graphic Designer" />
-<meta property="og:description" content="Clean interfaces, bold brand identities, and live websites." />
+<meta property="og:title" content="Dinesh Dhawan — UI / Web Designer" />
+<meta property="og:description" content="UI design, web design and AI-assisted development." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -22,12 +22,14 @@
     --rule-soft:rgba(26,25,22,.13);
     --accent:#ff4a1c;
     --max:1300px;
+    --sink:#161512;
+    --head-h:77px;
     --ease:cubic-bezier(.16,1,.3,1);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--ink);font-family:'Inter',Helvetica,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:clip;letter-spacing:-.01em}
-  section[id],#top{scroll-margin-top:96px}
+  section[id],#top{scroll-margin-top:calc(var(--head-h) + 20px)}
   /* Lenis required styles (auto-disables native smooth-scroll while active) */
   html.lenis,html.lenis body{height:auto}
   .lenis.lenis-smooth{scroll-behavior:auto!important}
@@ -45,11 +47,11 @@
   header{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid var(--rule-soft);transition:.3s}
   .head-row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0}
   .name{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:500;letter-spacing:-.035em}
-  .nav{display:flex;gap:44px}
+  .nav{display:flex;gap:34px}
   .nav a{font-size:14px;color:var(--ink);position:relative;padding-bottom:2px}
   .nav a::after{content:"";position:absolute;left:0;bottom:-1px;width:0;height:2px;background:var(--accent);transition:.3s var(--ease)}
   .nav a:hover::after,.nav a.active::after{width:100%}
-  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:11px 10px;margin-right:-10px}
   .burger span{width:22px;height:1.5px;background:var(--ink)}
 
   /* ---------- about / intro ---------- */
@@ -86,12 +88,14 @@
   .feat .fhead .mut{color:var(--muted)}
 
   /* ---------- filters ---------- */
-  .filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:16px 0;position:sticky;top:77px;background:var(--bg);z-index:40;border-bottom:1px solid var(--rule-soft)}
-  .filter{padding:7px 15px;border:1px solid var(--rule-soft);background:none;color:var(--muted);font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:.25s var(--ease);border-radius:2px}
+  .filterbar{position:sticky;top:var(--head-h);z-index:40;width:100%;background:var(--bg);border-top:1px solid var(--rule-soft);border-bottom:2px solid var(--ink)}
+  .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 0}
+  .filter{padding:11px 21px;border:1.5px solid var(--rule-soft);background:none;color:var(--muted);font-family:inherit;font-size:14px;font-weight:600;letter-spacing:-.01em;cursor:pointer;transition:.25s var(--ease);border-radius:3px}
   .filter:hover{color:var(--ink);border-color:var(--ink)}
-  .filter.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-  .filter-sub{display:inline-flex;gap:8px;align-items:center;padding-left:14px;margin-left:4px;border-left:1px solid var(--rule-soft)}
-  .filter.sm{font-size:12.5px;padding:6px 13px}
+  .filter.active{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:700}
+  .filter-sub{display:none;gap:8px;align-items:center;padding-left:14px;margin-left:4px;border-left:1px solid var(--rule-soft)}
+  .filter-sub.show{display:inline-flex}
+  .filter.sm{font-size:13px;padding:9px 17px;font-weight:600}
   .filter.sm::before{content:"↳ ";color:var(--faint)}
   .filter-select{display:none;width:100%;padding:13px 16px;font:500 15px 'Inter',sans-serif;color:var(--ink);background:var(--bg);border:1px solid var(--ink);border-radius:4px;-webkit-appearance:none;appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%231a1916' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
 
@@ -105,6 +109,7 @@
   .card{display:block}
   .thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:#dcdbd5;border:1px solid var(--rule-soft);isolation:isolate}
   .thumb .cover{position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover;z-index:-3;will-change:transform}
+  .thumb .ph{position:absolute;inset:0;z-index:-4;display:grid;place-items:center;padding:22px;text-align:center;background:linear-gradient(140deg,#26241f,#4a443a);color:#efeee9;font-size:1.25rem;font-weight:600;letter-spacing:-.03em}
   /* red info panel on hover */
   .thumb .hover-info{position:absolute;inset:0;z-index:2;background:var(--accent);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;gap:9px;padding:26px;opacity:0;transition:opacity .4s var(--ease)}
   .card:hover .hover-info{opacity:1}
@@ -148,27 +153,118 @@
 
   footer{padding:34px 0;border-top:1px solid var(--rule-soft);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:13px}
 
+  
+
   .reveal{opacity:0;transform:translateY(26px);transition:.8s var(--ease)}
   .reveal.in{opacity:1;transform:none}
 
   /* ---------- responsive ---------- */
+
+  /* hero identity + CTAs */
+  .hero-name{font-size:clamp(2.1rem,5.6vw,3.7rem);font-weight:600;letter-spacing:-.045em;line-height:1;margin-top:18px}
+  .hero-role{font-size:clamp(.9rem,1.5vw,1.1rem);font-weight:500;letter-spacing:.01em;margin-top:9px;opacity:.92}
+  .hero-cta{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+  .btn{font-size:14px;font-weight:600;padding:12px 24px;border-radius:100px;border:1px solid;transition:.3s var(--ease);display:inline-block}
+  .btn:hover{transform:translateY(-2px)}
+  .hero-banner .btn-solid{background:#fff;color:var(--accent);border-color:#fff}
+  .hero-banner .btn-ghost{background:none;color:#fff;border-color:rgba(255,255,255,.5)}
+  .hero-banner .btn-ghost:hover{background:rgba(255,255,255,.12)}
+  .btn-dark{background:var(--ink);color:var(--bg);border-color:var(--ink);margin-top:26px}
+
+  /* about */
+  .about-head{font-size:clamp(1.35rem,2.9vw,2.1rem);font-weight:500;letter-spacing:-.035em;line-height:1.08;margin-bottom:22px}
+  .about-cols p strong,.about-note strong{font-weight:600;color:var(--ink)}
+  .about-note{font-size:14px;color:var(--muted);margin-top:20px;max-width:660px}
+
+  /* core domains */
+  .domains{padding:46px 0 0}
+  .dom-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:34px;padding:8px 0 54px}
+  .dom .dnum{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.02em}
+  .dom h3{font-size:clamp(1.25rem,2.3vw,1.8rem);font-weight:500;letter-spacing:-.03em;margin:12px 0 9px}
+  .dom p{font-size:14px;color:var(--muted)}
+
+  /* selected work header */
+  .feat-count{font-size:13px;color:var(--muted);margin-top:14px}
+  .feat-link{font-size:14px;font-weight:600;border-bottom:1px solid var(--ink);padding-bottom:2px;display:inline-block;margin-top:16px;transition:.25s var(--ease)}
+  .feat-link:hover{color:var(--accent);border-color:var(--accent)}
+
+  /* tools — full-width dark band */
+  .tools-sec{background:var(--sink);color:#efeee9;padding:74px 0 78px;margin:34px 0 0}
+  .tools-sec .label{color:#8d8b83}
+  .tools-sec .works-label{padding:0 0 6px}
+  .tools-head{max-width:700px;padding:2px 0 4px}
+  .tools-title{font-size:clamp(1.9rem,4.4vw,3.2rem);font-weight:700;letter-spacing:-.045em;line-height:1.02;color:#fff}
+  .tools-sub{font-size:15px;color:#a8a69e;margin-top:16px;max-width:560px}
+  .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:14px;padding:40px 0 0}
+  .tcard{position:relative;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.035);padding:26px 24px 28px;transition:.4s var(--ease);overflow:hidden}
+  .tcard::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:.45s var(--ease)}
+  .tcard:hover{border-color:var(--accent);background:rgba(255,74,28,.1);transform:translateY(-6px)}
+  .tcard:hover::before{transform:scaleX(1)}
+  .tc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+  .tc-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:13.5px;font-weight:700;letter-spacing:-.01em;background:#efeee9;color:var(--sink);transition:.4s var(--ease)}
+  .tcard:hover .tc-mark{background:var(--accent);color:#fff}
+  .tc-tag{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .tcard h3{font-size:1.4rem;font-weight:600;letter-spacing:-.035em;color:#fff}
+  .tcard p{font-size:13.5px;color:#a8a69e;margin-top:9px}
+  /* contact */
+  .contact-sub{font-size:15px;color:var(--muted);margin-top:18px;max-width:520px}
+  .contact-sub strong{font-weight:600;color:var(--ink)}
+
+  /* ---------- responsive (must stay last) ---------- */
+  @media(hover:none){
+    .card .hover-info{display:none}
+    .btn:hover,.tcard:hover{transform:none}
+  }
   @media(max-width:900px){
     .about-grid,.contact-mini,.contact-grid{grid-template-columns:1fr;gap:14px}
     .about-cols{grid-template-columns:1fr;justify-content:flex-start;gap:14px}
     .feat{grid-template-columns:1fr;gap:14px}
     .proj-grid{grid-template-columns:1fr 1fr;gap:30px 22px}
+    .domains{padding:34px 0 0}
+    .dom-grid{gap:26px;padding-bottom:42px}
+    .tools-sec{padding:56px 0 58px;margin-top:26px}
+    .tool-grid{padding-top:30px}
+    .contact,.works{padding-top:56px}
   }
   @media(max-width:680px){
     .wrap{padding:0 22px}
-    .nav{position:fixed;inset:64px 22px auto 22px;flex-direction:column;gap:18px;background:var(--bg);border:1px solid var(--rule);padding:24px;transform:translateY(-150%);opacity:0;pointer-events:none;transition:.4s var(--ease);z-index:55}
+    .head-row{padding:16px 0}
+    .name{font-size:1.35rem}
+    /* hero */
+    .hero-banner{padding:38px 0 44px}
+    .hero-after{padding-top:36px}
+    .hero-name{margin-top:14px}
+    .portrait-row{padding:28px 0 4px}
+    .portrait{width:170px;height:214px}
+    .lead-eyebrow{font-size:12px}
+    /* sections */
+    .about-head{margin-bottom:16px}
+    .tools-sec{padding:46px 0 48px}
+    .tool-grid{gap:12px;padding-top:24px}
+    .tcard{padding:22px 20px 24px}
+    .tc-top{margin-bottom:20px}
+    .contact{padding:56px 0}
+    .contact-links{gap:12px;flex-direction:column;font-size:14.5px}
+    .contact-links a{align-self:flex-start}
+    .btn-dark{display:block;text-align:center;margin-top:24px}
+    .doodle{width:56px}
+    .nav{position:fixed;inset:calc(var(--head-h) + 8px) 22px auto 22px;flex-direction:column;gap:18px;background:var(--bg);border:1px solid var(--rule);padding:24px;transform:translateY(-150%);opacity:0;pointer-events:none;transition:.4s var(--ease);z-index:55}
     .nav.open{transform:none;opacity:1;pointer-events:auto}
     .burger{display:flex}
     .proj-grid{grid-template-columns:1fr;gap:34px}
-    .filters{top:60px;display:block;padding:14px 0}
+    .filters{display:block;padding:14px 0}
     .filters .filter,.filters .filter-sub{display:none}
     .filter-select{display:block}
     .meta h3{font-size:1.25rem}
-    .statement{padding:56px 0}
+    .statement{padding:52px 0}
+  }
+  @media(max-width:460px){
+    .wrap{padding:0 18px}
+    .hero-cta{flex-direction:column;align-items:stretch;gap:10px}
+    .hero-cta .btn{text-align:center}
+    .feat .fnum{font-size:1.9rem}
+    .tool-grid{grid-template-columns:1fr}
+    .stmt-line{gap:10px}
   }
 </style>
 </head>
@@ -180,7 +276,8 @@
       <a href="#top" class="name">Dinesh Dhawan</a>
       <nav class="nav" id="nav">
         <a href="#about" data-spy="about" class="active">About</a>
-        <a href="#work" data-spy="work">Projects</a>
+        <a href="#work" data-spy="work">Work</a>
+        <a href="#approach" data-spy="approach">Approach</a>
         <a href="https://www.behance.net/dineshdhawan" target="_blank" rel="noopener">Archive</a>
         <a href="#contact" data-spy="contact">Contact</a>
       </nav>
@@ -195,7 +292,13 @@
   <div class="wrap">
     <div class="intro-lead reveal">
       <span class="lead-eyebrow"><span class="ping"></span>Available for work — based in India</span>
-      <h2 class="lead-head anim-words">Designer crafting clean interfaces, bold brand identities &amp; live websites that actually work.</h2>
+      <h1 class="hero-name">Dinesh Dhawan</h1>
+      <div class="hero-role">UI / Web Designer</div>
+      <h2 class="lead-head anim-words">I design thoughtful interfaces and modern web experiences, combining strong visual direction with AI-assisted development.</h2>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="#work">View Work →</a>
+        <a class="btn btn-ghost" href="#contact">Let's Talk →</a>
+      </div>
     </div>
     <div class="portrait-row reveal">
       <div class="portrait">
@@ -212,9 +315,13 @@
     <div id="about">
       <div class="about-grid reveal">
         <div class="label">About</div>
-        <div class="about-cols">
-          <p>Starting with a passion for clean, purposeful design, Dinesh turned craft into a profession. With 5+ years of experience, he has developed a keen eye for detail and a knack for telling stories through interfaces.</p>
-          <p>Specialising in UI/UX and brand identity, Dinesh has worked on 24+ projects across branding, web, mobile and live websites — using Figma, Framer, Photoshop, Illustrator and front-end code.</p>
+        <div>
+          <h2 class="about-head anim-words">Designing ideas into experiences.</h2>
+          <div class="about-cols">
+            <p>I'm a UI / Web Designer focused on creating <strong>clear, engaging and visually refined digital experiences</strong>.</p>
+            <p>My work brings together <strong>UI design, web design and AI-assisted development</strong> — from shaping the visual direction to turning ideas into functional web experiences.</p>
+          </div>
+          <p class="about-note">I care about <strong>clarity, typography, composition, interaction and the details that make a digital experience feel complete.</strong></p>
         </div>
       </div>
       <div class="contact-mini reveal">
@@ -225,58 +332,142 @@
   </div>
 </section>
 
+<!-- CORE DOMAINS -->
+<section class="domains" id="domains">
+  <div class="wrap">
+    <div class="rule"></div>
+    <div class="works-label label reveal">Core domains</div>
+    <div class="dom-grid">
+      <div class="dom reveal">
+        <span class="dnum">01</span>
+        <h3>UI Design</h3>
+        <p>Interfaces with clear hierarchy, thoughtful layouts and consistent visual systems.</p>
+      </div>
+      <div class="dom reveal" style="transition-delay:90ms">
+        <span class="dnum">02</span>
+        <h3>Web Design</h3>
+        <p>Modern, responsive websites and landing pages with strong visual direction.</p>
+      </div>
+      <div class="dom reveal" style="transition-delay:180ms">
+        <span class="dnum">03</span>
+        <h3>AI-Assisted Development</h3>
+        <p>Turning designs into functional, polished web experiences through AI-assisted workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools-sec" id="tools">
+  <div class="wrap">
+    <div class="works-label label reveal">Tools</div>
+    <div class="tools-head reveal">
+      <h2 class="tools-title anim-words">The stack behind the work.</h2>
+      <p class="tools-sub">Design, build and commerce in one continuous workflow — from the first frame to the live site.</p>
+    </div>
+    <div class="tool-grid">
+      <div class="tcard reveal" style="transition-delay:0ms">
+        <div class="tc-top"><span class="tc-mark">Fi</span><span class="tc-tag">Design</span></div>
+        <h3>Figma</h3>
+        <p>UI design, prototyping and design systems — where every project starts.</p>
+      </div>
+      <div class="tcard reveal" style="transition-delay:80ms">
+        <div class="tc-top"><span class="tc-mark">Fr</span><span class="tc-tag">Build</span></div>
+        <h3>Framer</h3>
+        <p>Interactive, responsive websites built and shipped visually.</p>
+      </div>
+      <div class="tcard reveal" style="transition-delay:160ms">
+        <div class="tc-top"><span class="tc-mark">VS</span><span class="tc-tag">Develop</span></div>
+        <h3>VS Code + Claude</h3>
+        <p>AI-assisted development that turns a design into a live, hand-tuned build.</p>
+      </div>
+      <div class="tcard reveal" style="transition-delay:0ms">
+        <div class="tc-top"><span class="tc-mark">Sh</span><span class="tc-tag">Commerce</span></div>
+        <h3>Shopify</h3>
+        <p>Storefronts, products and collections for e-commerce brands.</p>
+      </div>
+      <div class="tcard reveal" style="transition-delay:80ms">
+        <div class="tc-top"><span class="tc-mark">Ps</span><span class="tc-tag">Visual</span></div>
+        <h3>Photoshop</h3>
+        <p>Retouching, composition and imagery for web and campaigns.</p>
+      </div>
+      <div class="tcard reveal" style="transition-delay:160ms">
+        <div class="tc-top"><span class="tc-mark">Ai</span><span class="tc-tag">Visual</span></div>
+        <h3>Illustrator</h3>
+        <p>Logos, icons and vector assets for brand identity work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- LATEST WORKS / PROJECTS -->
 <section class="works" id="work">
   <div class="wrap">
     <div class="rule"></div>
-    <div class="works-label label reveal">Latest works</div>
+    <div class="works-label label reveal">Selected work</div>
     <div class="feat reveal">
-      <div class="fnum">01—24</div>
-      <div class="fhead">24 projects <span class="mut">across brand, web &amp; product</span> — designed &amp; built</div>
+      <div class="fnum" id="projRange">01—28</div>
+      <div>
+        <div class="fhead">A selection of my work <span class="mut">across UI, web &amp; digital experiences</span></div>
+        <div class="feat-count"><span id="projTotal">28</span> projects — designed &amp; built</div>
+        <a class="feat-link" href="https://www.behance.net/dineshdhawan" target="_blank" rel="noopener">View All Projects →</a>
+      </div>
     </div>
+  </div>
 
-    <div class="rule"></div>
-    <div class="filters reveal">
-      <button class="filter active" data-f="all">All</button>
-      <button class="filter" data-f="figma">Figma</button>
-      <button class="filter" data-f="framer">Framer</button>
-      <button class="filter" data-f="claude">Claude</button>
-      <span class="filter-sub">
-        <button class="filter sm" data-f="templates">Templates</button>
-        <button class="filter sm" data-f="fullsite">Full website</button>
-        <button class="filter sm" data-f="product">Web product</button>
-        <button class="filter sm" data-f="redesign">Redesign</button>
-      </span>
-      <select class="filter-select" id="filterSelect" aria-label="Filter projects">
-        <option value="all">All projects</option>
-        <option value="figma">Figma</option>
-        <option value="framer">Framer</option>
-        <option value="claude">Claude</option>
-        <option value="templates">↳ Templates</option>
-        <option value="fullsite">↳ Full website</option>
-        <option value="product">↳ Web product</option>
-        <option value="redesign">↳ Redesign</option>
-      </select>
+  <div class="filterbar">
+    <div class="wrap">
+      <div class="filters reveal">
+        <button class="filter active" data-f="all">All</button>
+        <button class="filter" data-f="figma" title="UI Design, Prototyping, Design Systems">Figma</button>
+        <button class="filter" data-f="framer" title="Website Design, Responsive Layouts, Interactive Websites">Framer</button>
+        <button class="filter" data-f="ai" title="VS Code + Claude, HTML/CSS, JavaScript">AI-Assisted Dev</button>
+        <button class="filter" data-f="shopify" title="Store Setup, Product &amp; Collection Management, Theme Customization">Shopify</button>
+        <button class="filter" data-f="brand" title="Visual Identity, Typography, Color Systems, Brand Assets">Brand Identity</button>
+        <span class="filter-sub">
+          <button class="filter sm" data-f="fullsite">Full website</button>
+          <button class="filter sm" data-f="landing">Landing page</button>
+          <button class="filter sm" data-f="products">Products</button>
+          <button class="filter sm" data-f="experiments">Experiments</button>
+          <button class="filter sm" data-f="redesign">Website redesign</button>
+        </span>
+        <select class="filter-select" id="filterSelect" aria-label="Filter projects">
+          <option value="all">All projects</option>
+          <option value="figma">Figma — UI Design, Prototyping, Design Systems</option>
+          <option value="framer">Framer — Website Design, Responsive Layouts</option>
+          <option value="ai">AI-Assisted Web Development — VS Code + Claude</option>
+          <option value="shopify">Shopify — Store Setup, Theme Customization</option>
+          <option value="brand">Brand Identity — Visual Identity, Typography, Color</option>
+          <option value="fullsite">↳ Full website</option>
+          <option value="landing">↳ Landing page</option>
+          <option value="products">↳ Products</option>
+          <option value="experiments">↳ Experiments</option>
+          <option value="redesign">↳ Website redesign</option>
+        </select>
+      </div>
     </div>
+  </div>
+
+  <div class="wrap">
     <div class="proj-grid" id="projGrid"></div>
   </div>
 </section>
 
-<!-- STATEMENT -->
-<section class="statement">
+<!-- APPROACH -->
+<section class="statement" id="approach">
   <div class="wrap">
-    <div class="rule" style="margin-bottom:60px"></div>
+    <div class="rule" style="margin-bottom:44px"></div>
+    <div class="works-label label reveal" style="padding-top:0">Approach</div>
     <div class="stmt-line reveal">
-      <span class="big anim-words">Designed in India</span>
+      <span class="big anim-words">Think. Design. Build. Refine.</span>
       <span class="doodle">
         <svg viewBox="0 0 120 120" aria-hidden="true">
           <path d="M60 60 C60 30 78 18 86 30 C94 42 78 54 60 60 C82 56 96 70 86 80 C76 90 64 76 60 60 C64 82 52 96 42 86 C32 76 46 64 60 60 C38 64 24 52 34 42 C44 32 56 46 60 60 C56 38 70 26 80 36"/>
           <circle cx="60" cy="60" r="4"/>
         </svg>
       </span>
-      <span class="big accent">2026</span>
     </div>
-    <p class="stmt-body reveal">Explore my work across branding, UI/UX and live websites — from brand manuals and app screens to fully built, animated sites. Every project blends creativity with real function.</p>
+    <p class="stmt-body reveal">Every project starts with understanding the purpose, audience and visual direction. I explore ideas, build the interface, bring it to the web and refine the details until the experience feels right.</p>
   </div>
 </section>
 
@@ -287,12 +478,14 @@
     <div class="contact-grid reveal">
       <div class="label">Contact</div>
       <div>
-        <div class="big anim-words">Have a project?<br>Let's <a href="mailto:dhawandinesh3@gmail.com">create</a> something great.</div>
+        <div class="big anim-words">Have an idea in mind?</div>
+        <p class="contact-sub">Let's create something <strong>clear, thoughtful and worth experiencing.</strong></p>
         <div class="contact-links">
           <a href="mailto:dhawandinesh3@gmail.com">✉ dhawandinesh3@gmail.com</a>
           <a href="tel:+917727838602">✆ +91 77278 38602</a>
           <a href="https://www.behance.net/dineshdhawan" target="_blank" rel="noopener">↗ Behance</a>
         </div>
+        <a class="btn btn-dark" href="mailto:dhawandinesh3@gmail.com">Start a Conversation →</a>
       </div>
     </div>
   </div>
@@ -301,13 +494,20 @@
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;width:100%">
     <span>© <span id="yr"></span> Dinesh Dhawan</span>
-    <span>UI &amp; Graphic Designer — India</span>
+    <span>UI / Web Designer — India</span>
   </div>
 </footer>
 
 <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
 <script>
   document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // keep sticky offsets exact — the header height changes with the breakpoint
+  const headerEl=document.getElementById('header');
+  function setHeadVar(){document.documentElement.style.setProperty('--head-h',headerEl.offsetHeight+'px')}
+  setHeadVar();
+  addEventListener('resize',setHeadVar);
+  addEventListener('load',setHeadVar);
 
   // mobile menu
   const burger=document.getElementById('burger'),nav=document.getElementById('nav');
@@ -324,7 +524,8 @@
     const id=a.getAttribute('href'); if(id.length<2) return;
     const target=document.querySelector(id); if(!target) return;
     e.preventDefault(); nav.classList.remove('open');
-    if(lenis) lenis.scrollTo(target,{offset:-90}); else target.scrollIntoView({behavior:'smooth'});
+    const off=-(headerEl.offsetHeight+14);
+    if(lenis) lenis.scrollTo(target,{offset:off}); else target.scrollIntoView({behavior:'smooth'});
   }));
 
   // scroll parallax on hero portrait + card images
@@ -346,39 +547,46 @@
 
   // ---- projects ----
   const projects=[
-    // ===== FIGMA — Behance design work =====
-    {t:'LÍNEO Brand Manual',c:'Branding',cat:'figma',d:'A complete brand manual defining logo usage, colour palette and typography systems for a clean, consistent identity.',img:'images/lineo.png',u:'https://www.behance.net/gallery/234240763/LINEO-Brand-Manual'},
-    {t:'Brewline',c:'Coffee Brand Identity',cat:'figma',d:'Warm, characterful identity design for a craft coffee brand — from logo to packaging.',img:'images/brewline.png',u:'https://www.behance.net/gallery/233607305/Brewline-A-Coffee-Brand-Identity-Design'},
-    {t:'Pop Vibes Live',c:'Event Branding',cat:'figma',d:'Bold, energetic visual identity for a live music experience and its event collateral.',img:'images/popvibes.png',u:'https://www.behance.net/gallery/233608709/Pop-Vibes-Live'},
+    // ===== FIGMA — UI Design, Prototyping, Design Systems =====
     {t:'FORMA Furniture',c:'Minimalist Website',cat:'figma',d:'Modern, minimalist website design for a furniture studio with a focus on clean product display.',img:'images/forma.png',u:'https://www.behance.net/gallery/232691527/FORMA-Furniture-Modern-Minimalist-Website-Design'},
-    {t:'GrayMatter',c:'Lab Web Experience',cat:'figma',d:'An interplanetary matter exploration lab — a futuristic, immersive web concept.',img:'images/graymatter.png',u:'https://www.behance.net/gallery/231221035/GrayMatter-Interplanetary-Matter-Exploration-Lab'},
     {t:'Lumora',c:'Candle Brand UI',cat:'figma',d:'A soft, modern minimalist home page UI designed for a premium candle brand.',img:'images/lumora.png',u:'https://www.behance.net/gallery/231050413/Lumora-Modern-Minimalist-Candle-Brand-UI-Home-Page'},
     {t:'Noira',c:'Luxury Jewelry Landing',cat:'figma',d:'An elegant luxury jewelry landing page with refined typography and rich visuals.',img:'images/noira.png',u:'https://www.behance.net/gallery/230891439/Noira-Modern-Luxury-Jewelry-Landing-Page-Design'},
     {t:'NESTORA',c:'Stays Booking UI',cat:'figma',d:'Peaceful stays, wherever you roam — a calm, friendly travel booking experience.',img:'images/nestora.png',u:'https://www.behance.net/gallery/228928413/NESTORA-Peaceful-stays-wherever-you-roam'},
     {t:'HomyGo',c:'Booking App',cat:'figma',d:'An online apartment & house booking mobile application with intuitive flows.',img:'images/homygo.png',u:'https://www.behance.net/gallery/220189035/HomyGo-Online-Apartment-House-Booking-App'},
     {t:'LuxeCarry',c:'Handbag App',cat:'figma',d:'Handcrafted handbags — a premium e-commerce app design with a boutique feel.',img:'images/luxecarry.png',u:'https://www.behance.net/gallery/219899679/App-LuxeCarry-Handcrafted-handbags'},
     {t:'DesertElegance',c:'Parallax & Glassmorphism',cat:'figma',d:'An immersive web concept exploring parallax depth and glassmorphism aesthetics.',img:'images/desert.png',u:'https://www.behance.net/gallery/219830395/Parallax-Glassmorphism-DesertElegance'},
-    {t:'Retro Car Poster',c:'Poster Design',cat:'figma',d:'Cruising back in time — a vintage automotive poster series rich in nostalgia.',img:'images/retrocar.png',u:'https://www.behance.net/gallery/233607951/Retro-Car-Poster-Design-Cruising-Back-in-Time'},
-    // ===== FRAMER =====
+    // ===== BRAND IDENTITY — Visual Identity, Typography, Color Systems, Brand Assets =====
+    {t:'LÍNEO Brand Manual',c:'Branding',cat:'brand',tl:'Figma',d:'A complete brand manual defining logo usage, colour palette and typography systems for a clean, consistent identity.',img:'images/lineo.png',u:'https://www.behance.net/gallery/234240763/LINEO-Brand-Manual'},
+    {t:'Brewline',c:'Coffee Brand Identity',cat:'brand',tl:'Figma',d:'Warm, characterful identity design for a craft coffee brand — from logo to packaging.',img:'images/brewline.png',u:'https://www.behance.net/gallery/233607305/Brewline-A-Coffee-Brand-Identity-Design'},
+    {t:'Pop Vibes Live',c:'Event Branding',cat:'brand',tl:'Figma',d:'Bold, energetic visual identity for a live music experience and its event collateral.',img:'images/popvibes.png',u:'https://www.behance.net/gallery/233608709/Pop-Vibes-Live'},
+    {t:'Retro Car Poster',c:'Poster & Brand Assets',cat:'brand',tl:'Illustrator',d:'Cruising back in time — a vintage automotive poster series rich in nostalgia.',img:'images/retrocar.png',u:'https://www.behance.net/gallery/233607951/Retro-Car-Poster-Design-Cruising-Back-in-Time'},
+    // ===== FRAMER — Website Design, Responsive Layouts, Interactive Websites =====
     {t:'Reverence Realty',c:'Real Estate',cat:'framer',live:1,d:'A premium real-estate brand website designed and built in Framer, live in production.',img:'images/reverence.png',u:'https://reverencerealty.in/'},
-    {t:'Manglam Wood Story',c:'Brand Site',cat:'framer',live:1,d:'A story-driven website for a premium wood & interiors brand, crafted in Framer.',img:'images/manglamwood.png',u:'https://manglamwoodstory.framer.website/'},
-    // ===== CLAUDE · A. TEMPLATES =====
-    {t:'Manglam',c:'Immersive Experience',cat:'claude',sub:'templates',live:1,noframe:1,d:'“Breathe it in” — an immersive, scroll-driven sky experience built with code.',img:'images/manglam.png',u:'https://manglam-nine.vercel.app/'},
-    {t:'Verdure Catering',c:'Catering & Events',cat:'claude',sub:'templates',live:1,d:'An elegant, ready-to-use website template for a catering & events company.',img:'images/verdure.png',u:'https://verdure-catering.vercel.app/'},
-    // ===== CLAUDE · B. FULL WEBSITE =====
-    {t:'SLM Constructions',c:'Construction',cat:'claude',sub:'fullsite',live:1,d:'“We build trust” — a full corporate website for a construction firm, built end-to-end.',img:'images/slm.png',u:'https://slm-website-blond.vercel.app/index.html'},
-    // ===== CLAUDE · C. WEB PRODUCT =====
-    {t:'Aaradhya Residences',c:'Real Estate',cat:'claude',sub:'product',live:1,d:'A luxury residences showcase with immersive project galleries and smooth interactions.',img:'images/aaradhya.png',u:'https://aaradhya2.netlify.app/'},
-    {t:'Pedigree Archive',c:'Heritage Keepsake',cat:'claude',sub:'product',live:1,d:'“Kindred & Lineage” — an heirloom family-history web product with a timeless feel.',img:'images/pedigree.png',u:'https://pedigree-archive-aakar-jains-projects.vercel.app/index.html'},
-    // ===== CLAUDE · D. REDESIGN (old → new) =====
-    {t:'Tilo Handicrafts',c:'E-commerce',cat:'claude',sub:'redesign',live:1,d:'A redesigned storefront for a handicrafts brand — fresher, faster and more refined.',img:'images/tilo.png',u:'https://tilohandicrafts.vercel.app/',oldImg:'images/tilo-old.png',oldU:'https://tilohandicrafts.com/'},
-    {t:'Spice Story World',c:'Food Brand',cat:'claude',sub:'redesign',live:1,d:'A refreshed brand website for a spice company, with bolder visuals and clearer structure.',img:'images/spicestory.png',u:'https://spicestoryworld.vercel.app/',oldImg:'images/spicestory-old.png',oldU:'https://spicestoryworld.com/'},
-    {t:'Aditi Defence',c:'Publication',cat:'claude',sub:'redesign',live:1,d:'A redesign of a defence-affairs publication platform with stronger editorial hierarchy.',img:'images/aditi.png',u:'https://aditi-defence.vercel.app/',oldImg:'images/aditi-old.png',oldU:'https://aditidefence.in/'},
-    {t:'Poonam Mayank Sharma',c:'Weddings',cat:'claude',sub:'redesign',live:1,d:'A luxury & destination wedding-planner site, reimagined with an elegant, modern look.',img:'images/poonam.png',u:'https://poonam-mayank-sharma.vercel.app/',oldImg:'images/poonam-old.png',oldU:'https://poonammayanksharma.co.in/'},
-    {t:'Dream Strokes',c:'Creative Studio',cat:'claude',sub:'redesign',live:1,d:'A redesigned website for a creative studio — cleaner, more immersive and on-brand.',img:'images/dreamstrokes.png',u:'https://dreamstrokes.netlify.app/',oldImg:'images/dreamstrokes-old.png',oldU:'https://www.dreamstrokes.in/home'}
+    {t:'Manglam Wood Story',c:'Furniture Brand',cat:'framer',live:1,d:'“A Better Way With Wood” — high-end furniture solutions for large-scale interior projects.',img:'images/manglamwood.png',u:'https://manglamwoodstory.com/'},
+    // ===== AI-ASSISTED WEB DEV · FULL WEBSITE =====
+    {t:'Verdure Catering',c:'Catering & Events',cat:'ai',sub:'fullsite',live:1,d:'An elegant, ready-to-use website template for a catering & events company.',img:'images/verdure.png',u:'https://verdure-catering.vercel.app/'},
+    {t:'SLM Constructions',c:'Construction',cat:'ai',sub:'fullsite',live:1,d:'“We build trust” — a full corporate website for a construction firm, built end-to-end.',img:'images/slm.png',u:'https://slmindia.in/'},
+    // ===== AI-ASSISTED WEB DEV · LANDING PAGE =====
+    {t:'Shri Vitthalesh Nivasa',c:'Studio Suites Launch',cat:'ai',sub:'landing',live:1,d:'A pre-launch landing page for studio suites in Gopalpura, Jaipur — built to drive early enquiries.',img:'images/nivasa.png',u:'https://nivasa-landing.vercel.app/'},
+    {t:'Green Acres Bhiwadi',c:'Real Estate Teaser',cat:'ai',sub:'landing',live:1,d:'A coming-soon teaser page for a Reverence Realty development in Bhiwadi.',img:'images/greenacres.png',u:'https://green-acres-bhiwadi.vercel.app/'},
+    // ===== AI-ASSISTED WEB DEV · PRODUCTS =====
+    {t:'Aaradhya Residences',c:'Real Estate',cat:'ai',sub:'products',live:1,d:'A luxury residences showcase with immersive project galleries and smooth interactions.',img:'images/aaradhya.png',u:'https://aaradhya2.netlify.app/'},
+    {t:'Pedigree Archive',c:'Heritage Keepsake',cat:'ai',sub:'products',live:1,d:'“Kindred & Lineage” — an heirloom family-history web product with a timeless feel.',img:'images/pedigree.png',u:'https://pedigree-archive-aakar-jains-projects.vercel.app/index.html'},
+    // ===== AI-ASSISTED WEB DEV · EXPERIMENTS =====
+    {t:'Manglam BDL',c:'Scroll Experience',cat:'ai',sub:'experiments',live:1,d:'A scroll-driven brand experience for Manglam BDL, paced entirely through motion.',img:'images/manglambdl.png',u:'https://manglam-website.vercel.app/'},
+    {t:'Designs & Words',c:'Studio Site',cat:'ai',sub:'experiments',live:1,d:'The studio’s own site — identity, interface and motion for brands that would rather be built than decorated.',img:'images/designsandwords.png',u:'https://designs-and-words.vercel.app/'},
+    {t:'Manglam',c:'Immersive Experience',cat:'ai',sub:'experiments',live:1,noframe:1,d:'“Breathe it in” — an immersive, scroll-driven sky experience built with code.',img:'images/manglam.png',u:'https://manglam-nine.vercel.app/'},
+    // ===== AI-ASSISTED WEB DEV · WEBSITE REDESIGN (old → new) =====
+    {t:'Tilo Handicrafts',c:'E-commerce',cat:'ai',sub:'redesign',live:1,d:'A redesigned storefront for a handicrafts brand — fresher, faster and more refined.',img:'images/tilo.png',u:'https://tilohandicrafts.vercel.app/',oldImg:'images/tilo-old.png',oldU:'https://tilohandicrafts.com/'},
+    {t:'Spice Story World',c:'Food Brand',cat:'ai',sub:'redesign',live:1,d:'A refreshed brand website for a spice company, with bolder visuals and clearer structure.',img:'images/spicestory.png',u:'https://spicestoryworld.vercel.app/',oldImg:'images/spicestory-old.png',oldU:'https://spicestoryworld.com/'},
+    {t:'Aditi Defence',c:'Publication',cat:'ai',sub:'redesign',live:1,d:'A redesign of a defence-affairs publication platform with stronger editorial hierarchy.',img:'images/aditi.png',u:'https://aditi-defence.vercel.app/',oldImg:'images/aditi-old.png',oldU:'https://aditidefence.in/'},
+    {t:'Poonam Mayank Sharma',c:'Weddings',cat:'ai',sub:'redesign',live:1,d:'A luxury & destination wedding-planner site, reimagined with an elegant, modern look.',img:'images/poonam.png',u:'https://poonam-mayank-sharma.vercel.app/',oldImg:'images/poonam-old.png',oldU:'https://poonammayanksharma.co.in/'},
+    {t:'Dream Strokes',c:'Creative Studio',cat:'ai',sub:'redesign',live:1,d:'A redesigned website for a creative studio — cleaner, more immersive and on-brand.',img:'images/dreamstrokes.png',u:'https://dreamstrokes.netlify.app/',oldImg:'images/dreamstrokes-old.png',oldU:'https://www.dreamstrokes.in/home'},
+    // ===== SHOPIFY — Store Setup, Product & Collection Management, Theme Customization =====
+    {t:'Mitisha Jaipur',c:'Home Linen Store',cat:'shopify',live:1,d:'A Shopify storefront for a Jaipur heritage brand — hand-block printed bedsheets, dohars and home linen.',img:'images/mitisha.png',u:'https://mitishajaipur.com/'}
   ];
 
-  const toolLabel={figma:'Figma',framer:'Framer',claude:'Claude'};
+  const toolLabel={figma:'Figma',framer:'Framer',ai:'AI-Assisted',shopify:'Shopify',brand:'Brand Identity'};
   const grid=document.getElementById('projGrid');
   grid.innerHTML=projects.map((p,i)=>{
     const hasBA=!!p.oldImg;
@@ -388,13 +596,14 @@
        ${hasBA?`data-newimg="${p.img}" data-newurl="${p.u}" data-oldimg="${p.oldImg}" data-oldurl="${p.oldU}"`:''}
        href="${p.u}" target="_blank" rel="noopener">
       <div class="thumb">
-        ${p.img?`<img class="cover" data-px="36" src="${p.img}" alt="${p.t}" loading="lazy" />`:`<div class="cover" style="background:${p.g}"></div>`}
+        <div class="ph"><span>${p.t}</span></div>
+        ${p.img?`<img class="cover" data-px="36" src="${p.img}" alt="${p.t}" loading="lazy" onerror="this.remove()" />`:''}
         ${hasBA?`<div class="ba-toggle" title="Compare old vs redesigned site">
           <button type="button" class="ba-btn active" data-mode="after">After</button>
           <button type="button" class="ba-btn" data-mode="before">Before</button>
         </div>`:''}
         <div class="hover-info">
-          <span class="hi-cat">${p.c} · ${toolLabel[p.cat]}</span>
+          <span class="hi-cat">${p.c} · ${p.tl||toolLabel[p.cat]}</span>
           <h4 class="hi-title">${p.t}</h4>
           <p class="hi-desc">${p.d}</p>
           <span class="hi-link">View project ↗</span>
@@ -403,10 +612,14 @@
       <div class="meta">
         <span class="num">${no}</span>
         <div><h3>${p.t}</h3><span class="cat">${p.c}</span></div>
-        <span class="tool">${p.live?'<span class="dot"></span>':''}${toolLabel[p.cat]}</span>
+        <span class="tool">${p.live?'<span class="dot"></span>':''}${p.tl||toolLabel[p.cat]}</span>
       </div>
     </a>`;
   }).join('');
+
+  // keep the headline counts in step with the project list
+  document.getElementById('projRange').textContent='01—'+String(projects.length).padStart(2,'0');
+  document.getElementById('projTotal').textContent=projects.length;
 
   // before / after toggle
   document.querySelectorAll('.card.has-ba .ba-btn').forEach(btn=>{
@@ -416,7 +629,7 @@
       card.querySelectorAll('.ba-btn').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
       const before=btn.dataset.mode==='before';
-      card.querySelector('.cover').src=before?card.dataset.oldimg:card.dataset.newimg;
+      const cov=card.querySelector('.cover'); if(cov) cov.src=before?card.dataset.oldimg:card.dataset.newimg;
       card.href=before?card.dataset.oldurl:card.dataset.newurl;
       card.classList.toggle('mode-before',before);
       card.classList.toggle('mode-after',!before);
@@ -425,13 +638,19 @@
 
   // filters (buttons + mobile dropdown share one handler)
   const filterSelect=document.getElementById('filterSelect');
+  const subBar=document.querySelector('.filter-sub');
+  const SUBS=['fullsite','landing','products','experiments','redesign'];
   function applyFilter(f){
     document.querySelectorAll('.card').forEach(c=>{
       const show=f==='all'||c.dataset.cat===f||c.dataset.sub===f;
       c.classList.toggle('hide',!show);
     });
-    const act=document.querySelector('.filter.active'); if(act) act.classList.remove('active');
+    document.querySelectorAll('.filter.active').forEach(b=>b.classList.remove('active'));
     const btn=document.querySelector('.filter[data-f="'+f+'"]'); if(btn) btn.classList.add('active');
+    // the sub-filters belong to AI-Assisted Dev — only shown while that branch is active
+    const inAI=SUBS.includes(f);
+    subBar.classList.toggle('show',f==='ai'||inAI);
+    if(inAI) document.querySelector('.filter[data-f="ai"]').classList.add('active');
     if(filterSelect.value!==f) filterSelect.value=f;
   }
   document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>applyFilter(b.dataset.f)));
